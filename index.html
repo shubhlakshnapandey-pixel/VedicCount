@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Vedic Multiplier | Aarambh Coders</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="navbar">
+    <a href="#" class="brand">
+      <span class="brand-icon">✳</span>
+      <span>AARAMBH<span class="brand-light"> CODERS</span></span>
+    </a>
+    <span class="method-tag">VEDIC MATHS</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="live-dot"></span>
+        ANCIENT MATHEMATICS · MODERN COMPUTING
+      </div>
+
+      <h1>Multiply at the<br>
+        <span class="gradient-text">speed of Vedic maths.</span>
+      </h1>
+
+      <p class="hero-description">
+        Discover the power of Urdhva Tiryagbhyam —
+        the Vedic technique of vertical and crosswise multiplication.
+      </p>
+    </section>
+
+    <section class="calculator card">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">THE MULTIPLIER</span>
+          <h2>Calculate your product</h2>
+        </div>
+        <div class="math-symbol">×</div>
+      </div>
+
+      <form id="calculatorForm">
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="numberA">First number</label>
+            <input
+              id="numberA"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="e.g. 123"
+              maxlength="30"
+              required
+              aria-describedby="inputHelp"
+            >
+          </div>
+
+          <div class="multiply-sign">×</div>
+
+          <div class="input-group">
+            <label for="numberB">Second number</label>
+            <input
+              id="numberB"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="e.g. 456"
+              maxlength="30"
+              required
+            >
+          </div>
+        </div>
+
+        <p id="inputHelp" class="input-help">
+          Enter positive whole numbers or zero (up to 30 digits).
+        </p>
+
+        <div class="button-row">
+          <button type="submit" class="calculate-btn">
+            <span>Calculate Product</span>
+            <span class="btn-arrow">↗</span>
+          </button>
+          <button type="button" id="swapBtn" class="secondary-btn"
+            aria-label="Swap numbers" title="Swap numbers">⇄</button>
+          <button type="button" id="clearBtn" class="secondary-btn"
+            aria-label="Clear calculator" title="Clear">↺</button>
+        </div>
+      </form>
+
+      <p id="errorMessage" class="error-message" role="alert"></p>
+
+      <section id="resultSection" class="result-section" hidden>
+        <div class="result-top">
+          <span class="section-label">YOUR RESULT</span>
+          <span class="success-label"><span>●</span> Calculated</span>
+        </div>
+
+        <div id="resultValue" class="result-value" aria-live="polite">0</div>
+        <div id="equation" class="equation"></div>
+
+        <div class="result-actions">
+          <button type="button" id="copyBtn" class="text-btn">
+            ▣ Copy result
+          </button>
+          <button type="button" id="stepsBtn" class="text-btn">
+            ↓ View calculation steps
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <section id="stepsSection" class="steps-section card" hidden>
+      <div class="section-heading">
+        <div>
+          <span class="section-label">INSIDE THE METHOD</span>
+          <h2>How the answer is calculated</h2>
+        </div>
+        <span class="steps-icon">∑</span>
+      </div>
+
+      <p class="steps-intro">
+        Digits are processed from right to left. Each diagonal
+        combines vertical and crosswise products, including any carry.
+      </p>
+
+      <div id="stepsList" class="steps-list"></div>
+
+      <div class="formula-note">
+        <span class="formula-icon">✦</span>
+        <p><strong>Urdhva Tiryagbhyam</strong><br>
+          The Sanskrit name means “vertically and crosswise.”
+          This implementation applies the digit-product and carry
+          rules to numbers of different lengths.
+        </p>
+      </div>
+    </section>
+
+    <section class="method-card">
+      <div class="method-number">01</div>
+      <div>
+        <h3>Vertical & Crosswise</h3>
+        <p>Multiply digits in successive diagonals, add their products,
+          and pass carries to the next position.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">✳ AARAMBH CODERS</div>
+    <p>Built with logic, learning & Vedic mathematics.</p>
+    <p class="creator">Made by S.L.Pandey (Aarambh Coders)</p>
+    <span class="copyright">© <span id="year"></span> · All rights reserved</span>
+  </footer>
+</body>
+</html>
